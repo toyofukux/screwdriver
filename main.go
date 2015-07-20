@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/mitchellh/cli"
 	"github.com/takasing/screwdriver/command"
+	"github.com/takasing/screwdriver/utils"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func run() int {
 
 	exitCode, err := cli.Run()
 	if err != nil {
-		fmt.Println(err)
+		utils.ErrorOutput(err.Error())
 		return 1
 	}
 

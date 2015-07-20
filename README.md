@@ -12,7 +12,7 @@ go get github.com/takasing/screwdriver
 ```
 
 ### Configuring
-The configurations of `screw` command consists of environment variables and `yml`
+The configurations of `screwdriver` command consists of environment variables and `yml`
 
 #### AWS environment variable
 - AWS_ACCESS_KEY_ID
@@ -42,7 +42,21 @@ api:
 ```
 
 #### Environment variables for yaml
-`screw` picks up environment variables start with `SCREW_` prefix.  
+`screwdriver` picks up environment variables start with `SCREW_` prefix.  
 If you define `SCREW_NGINX_IMAGE_TAG` environment variable, you can use `NGINX_IMAGE_TAG` in yml.
 
-### Command
+### Usage
+```
+usage: screwdriver [--version] [--help] <command> [<args>]
+
+Available commands are:
+    task    Operate ECS task
+```
+
+#### task
+```
+Usage: screw task <subcommand> [options]
+Subcommands:
+        defs          show the list of task definitions
+        register      register task definition from configration file
+```

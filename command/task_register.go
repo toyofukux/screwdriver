@@ -27,7 +27,7 @@ func (c *TaskRegisterCommand) Run(args []string) int {
 
 	if err := flags.Parse(args); err != nil {
 		utils.ErrorOutputf("Error parsing CLI flags: %s", err)
-		utils.ErrorOutput(c.Help())
+		fmt.Println(c.Help())
 		return 1
 	}
 
@@ -89,7 +89,12 @@ func generateRegisterTaskDefinitionInput(family string, path string) (*ecs.Regis
 
 // Help show Command implementation method for TaskRegisterCommand.
 func (c *TaskRegisterCommand) Help() string {
-	return ""
+	return `
+Usage: screw task def [options]
+Options:
+	-family(string)    The family name you want to register.
+	-path(string)      The file path you want to register. Now support Yaml.
+`
 }
 
 // Synopsis Command implementation method for TaskRegisterCommand.

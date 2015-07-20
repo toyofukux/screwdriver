@@ -30,7 +30,7 @@ func (c *TaskDefsCommand) Run(args []string) int {
 
 	if err := flags.Parse(args); err != nil {
 		utils.ErrorOutputf("Error parsing CLI flags: %s", err)
-		utils.ErrorOutput(c.Help())
+		fmt.Println(c.Help())
 		return 1
 	}
 
@@ -77,7 +77,7 @@ func (c *TaskDefsCommand) Help() string {
 	helpText := `
 Usage: screw task def [options]
 Options:
-	-prefix(strig)     The full family name that you want to filter.
+	-prefix(string)    The full family name that you want to filter.
 	-max(int)          The total number of items to return.
 	-next(string)      A token to specify where to start paginating.
 	-desc(bool)        The order in which to sort the results.
