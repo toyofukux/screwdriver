@@ -1,0 +1,53 @@
+{
+	"ImportPath": "github.com/takasing/screwdriver",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/aws",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/endpoints",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/json/jsonutil",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/jsonrpc",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/rest",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/signer/v4",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/service/ecs",
+			"Comment": "v0.6.7-3-g2a6648c",
+			"Rev": "25022a98a021a1110f362b1c0c728eef7ec96e23"
+		},
+		{
+			"ImportPath": "github.com/mitchellh/cli",
+			"Rev": "8102d0ed5ea2709ade1243798785888175f6e415"
+		},
+		{
+			"ImportPath": "github.com/vaughan0/go-ini",
+			"Rev": "a98ad7ee00ec53921f08832bc06ecf7fd600e6a1"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh/terminal",
+			"Rev": "4d8f0cfeca8290cfc0091edf678a138ce669b1bb"
+		}
+	]
+}

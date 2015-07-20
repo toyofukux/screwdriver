@@ -1,4 +1,4 @@
-package config
+package aws
 
 import (
 	"github.com/aws/aws-sdk-go/aws"
@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	// Config is AWS Config has AWS_ACCESS_KEY_ID, and AWS_SECRET_ACCESS_KEY
+	// Config is AWS Config has AWS_ACCESS_KEY_ID, and AWS_SECRET_ACCESS_KEY.
 	Config *aws.Config
 )
 
