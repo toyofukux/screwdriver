@@ -22,25 +22,6 @@ func run() int {
 		HelpWriter: os.Stdout,
 	}
 
-	// envs := utils.LoadScrewEnvs()
-	//
-	// // TODO: enable to specify
-	// data, err := ioutil.ReadFile("task.yml")
-	// if err != nil {
-	// 	panic(err)
-	// }
-	//
-	// b, err := task.ExpandTemplate(data, envs)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// fmt.Println(string(b))
-	//
-	// _, err = task.BindYml(b)
-	// if err != nil {
-	// 	panic(err)
-	// }
-
 	exitCode, err := cli.Run()
 	if err != nil {
 		fmt.Println(err)

@@ -1,6 +1,6 @@
 package command
 
-import "fmt"
+import "github.com/takasing/screwdriver/utils"
 
 // TaskCommand is a Command implementation used to
 // operate ECS task.
@@ -13,7 +13,7 @@ func (c *TaskCommand) Run(argsRow []string) int {
 	copy(args, argsRow)
 
 	if len(args) == 0 {
-		fmt.Println(c.Help())
+		utils.ErrorOutput(c.Help())
 		return 1
 	}
 
@@ -24,8 +24,11 @@ func (c *TaskCommand) Run(argsRow []string) int {
 	case "list":
 		cmd := &TaskListCommand{}
 		return cmd.Run(args[1:])
+	case "register":
+		cmd := &TaskRegisterCommand{}
+		return cmd.Run(args[1:])
 	default:
-		fmt.Println(c.Help())
+		utils.ErrorOutput(c.Help())
 		return 1
 	}
 }

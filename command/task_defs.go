@@ -4,16 +4,16 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/awsutil"
 	"github.com/aws/aws-sdk-go/service/ecs"
+	"github.com/takasing/screwdriver/aws"
+	"github.com/takasing/screwdriver/utils"
 )
 
 // TaskDefsCommand is a Command implementation used to
 // get ECS task definition list.
-type TaskDefsCommand struct {
-}
+type TaskDefsCommand struct{}
 
 // Run is Command implementation method for TaskDefsCommand.
 func (c *TaskDefsCommand) Run(args []string) int {
@@ -27,26 +27,25 @@ func (c *TaskDefsCommand) Run(args []string) int {
 	flags.BoolVar(&desc, "desc", false, "sort task definitions ASC or DESC")
 	flags.StringVar(&status, "status", "ACTIVE", "task definition status")
 	flags.Usage = func() { c.Help() }
+
 	if err := flags.Parse(args); err != nil {
-		fmt.Println(err.Error())
-		fmt.Println(c.Help())
+		utils.ErrorOutputf("Error parsing CLI flags: %s", err)
+		utils.ErrorOutput(c.Help())
 		return 1
 	}
 
-	input := generateInput(familyPrefix, max, nextToken, desc, status)
+	input := generateListTaskDefinitionsInput(familyPrefix, max, nextToken, desc, status)
 
-	// TODO: initialize ECS client here
-	// TODO: extends Command implementation with initialize()
-
-	resp, err := awsClient.TaskDefs(input)
+	client := aws.GetClient()
+	resp, err := client.TaskDefs(input)
 	if err != nil {
 		if awsErr, ok := err.(awserr.Error); ok {
-			fmt.Println(awsErr.Code(), awsErr.Message(), awsErr.OrigErr())
+			utils.ErrorOutput(awsErr.Code(), awsErr.Message(), awsErr.OrigErr())
 			if reqErr, ok := err.(awserr.RequestFailure); ok {
-				fmt.Println(reqErr.Code(), reqErr.Message(), reqErr.StatusCode(), reqErr.RequestID())
+				utils.ErrorOutput(reqErr.Code(), reqErr.Message(), reqErr.StatusCode(), reqErr.RequestID())
 			}
 		} else {
-			fmt.Println(err.Error())
+			utils.ErrorOutput(err.Error())
 		}
 		return 1
 	}
@@ -54,21 +53,21 @@ func (c *TaskDefsCommand) Run(args []string) int {
 	return 0
 }
 
-func generateInput(prefix string, max int64, token string, desc bool, status string) *ecs.ListTaskDefinitionsInput {
+func generateListTaskDefinitionsInput(prefix string, max int64, token string, desc bool, status string) *ecs.ListTaskDefinitionsInput {
 	var input *ecs.ListTaskDefinitionsInput
 	sort := "ASC"
 	if desc {
 		sort = "DESC"
 	}
 	input = &ecs.ListTaskDefinitionsInput{
-		MaxResults: aws.Long(max),
-		NextToken:  aws.String(token),
-		Sort:       aws.String(sort),
-		Status:     aws.String(status),
+		MaxResults: &max,
+		NextToken:  &token,
+		Sort:       &sort,
+		Status:     &status,
 	}
 	// if set empty string to FamilyPrefix, return empty list
 	if prefix != "" {
-		input.FamilyPrefix = aws.String(prefix)
+		input.FamilyPrefix = &prefix
 	}
 	return input
 }
