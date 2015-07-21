@@ -6,6 +6,19 @@ The tools to manage EC2 Container Service(ECS)
 ### Caution
 This repository depends on AWS, ECS specification.
 
+### Future
+- [ ] task
+  - [x] show the list of task definitions
+  - [x] register task new definition
+- [ ] service
+  - [ ] create service
+  - [ ] update service
+- [ ] Auto Scaling
+- [ ] ELB
+- [ ] Blue-Green Deployment
+
+And you have some suggestion, create new Issue :)
+
 ### Installing
 ```go
 go get github.com/takasing/screwdriver
