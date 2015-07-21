@@ -26,7 +26,7 @@ func (c *TaskListCommand) Run(argsRow []string) int {
 // Help show Command implementation method for TaskListCommand.
 func (c *TaskListCommand) Help() string {
 	helpText := `
-Usage: screw task list [options]
+Usage: screwdriver task list [options]
 `
 	return helpText
 }

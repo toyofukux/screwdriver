@@ -36,7 +36,7 @@ func (c *TaskCommand) Run(argsRow []string) int {
 // Help show how to use command.
 func (c *TaskCommand) Help() string {
 	helpText := `
-Usage: screw task <subcommand> [options]
+Usage: screwdriver task <subcommand> [options]
 Subcommands:
 	defs          show the list of task definitions
 	register      register task definition from configration file

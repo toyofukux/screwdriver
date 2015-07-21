@@ -11,6 +11,7 @@ This repository depends on AWS, ECS specification.
   - [x] show the list of task definitions
   - [x] register task new definition
 - [ ] service
+  - [x] show the list of services
   - [ ] create service
   - [ ] update service
 - [ ] Auto Scaling
@@ -63,13 +64,23 @@ If you define `SCREW_NGINX_IMAGE_TAG` environment variable, you can use `NGINX_I
 usage: screwdriver [--version] [--help] <command> [<args>]
 
 Available commands are:
-    task    Operate ECS task
+    service    Operate ECS service
+    task       Operate ECS task
 ```
 
 #### task
 ```
-Usage: screw task <subcommand> [options]
+Usage: screwdriver task <subcommand> [options]
 Subcommands:
         defs          show the list of task definitions
         register      register task definition from configration file
+```
+
+#### service
+```
+Usage: screwdriver service <subcommand> [options]
+Subcommands:
+        list        show the list of ECS services
+        create      create ECS service
+        update      update ECS service
 ```

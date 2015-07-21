@@ -40,3 +40,13 @@ func (c *Client) TaskDefs(input *ecs.ListTaskDefinitionsInput) (*ecs.ListTaskDef
 func (c *Client) TaskRegister(input *ecs.RegisterTaskDefinitionInput) (*ecs.RegisterTaskDefinitionOutput, error) {
 	return c.ecs.RegisterTaskDefinition(input)
 }
+
+// ServiceList return the list of services
+func (c *Client) ServiceList(input *ecs.ListServicesInput) (*ecs.ListServicesOutput, error) {
+	return c.ecs.ListServices(input)
+}
+
+// ServiceCreate create ECS service
+func (c *Client) ServiceCreate(input *ecs.CreateServiceInput) (*ecs.CreateServiceOutput, error) {
+	return c.ecs.CreateService(input)
+}

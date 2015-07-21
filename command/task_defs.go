@@ -75,7 +75,7 @@ func generateListTaskDefinitionsInput(prefix string, max int64, token string, de
 // Help show Command implementation method for TaskDefsCommand.
 func (c *TaskDefsCommand) Help() string {
 	helpText := `
-Usage: screw task def [options]
+Usage: screwdriver task def [options]
 Options:
 	-prefix(string)    The full family name that you want to filter.
 	-max(int)          The total number of items to return.

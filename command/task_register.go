@@ -90,7 +90,7 @@ func generateRegisterTaskDefinitionInput(family string, path string) (*ecs.Regis
 // Help show Command implementation method for TaskRegisterCommand.
 func (c *TaskRegisterCommand) Help() string {
 	return `
-Usage: screw task def [options]
+Usage: screwdriver task def [options]
 Options:
 	-family(string)    The family name you want to register.
 	-path(string)      The file path you want to register. Now support Yaml.
