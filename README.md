@@ -18,6 +18,10 @@ This repository depends on AWS, ECS specification.
   - [x] create service
   - [x] update service
   - [ ] describe service
+- [x] cluster
+  - [x] show the list of clusters
+  - [x] create cluster
+  - [x] delete cluster
 - [ ] Auto Scaling
 - [ ] ELB
 - [ ] Blue-Green Deployment
@@ -68,6 +72,7 @@ If you define `SCREW_NGINX_IMAGE_TAG` environment variable, you can use `NGINX_I
 usage: screwdriver [--version] [--help] <command> [<args>]
 
 Available commands are:
+    cluster    Operate ECS cluster
     service    Operate ECS service
     task       Operate ECS task
 ```
@@ -87,4 +92,13 @@ Subcommands:
         list        show the list of ECS services
         create      create ECS service
         update      update ECS service
+```
+
+#### cluster
+```
+Usage: screwdriver cluster <subcommand> [options]
+Subcommands:
+        list        show the list of ECS cluster
+        create      create ECS cluster
+        delete      delete ECS service
 ```
