@@ -50,3 +50,8 @@ func (c *Client) ServiceList(input *ecs.ListServicesInput) (*ecs.ListServicesOut
 func (c *Client) ServiceCreate(input *ecs.CreateServiceInput) (*ecs.CreateServiceOutput, error) {
 	return c.ecs.CreateService(input)
 }
+
+// ServiceUpdate update ECS service
+func (c *Client) ServiceUpdate(input *ecs.UpdateServiceInput) (*ecs.UpdateServiceOutput, error) {
+	return c.ecs.UpdateService(input)
+}
