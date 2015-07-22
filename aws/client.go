@@ -31,7 +31,7 @@ func GetClient() *Client {
 	return client
 }
 
-// TaskDefs return the list of task definitions
+// TaskDefs return the list of ECS task definitions
 func (c *Client) TaskDefs(input *ecs.ListTaskDefinitionsInput) (*ecs.ListTaskDefinitionsOutput, error) {
 	return c.ecs.ListTaskDefinitions(input)
 }
@@ -41,7 +41,7 @@ func (c *Client) TaskRegister(input *ecs.RegisterTaskDefinitionInput) (*ecs.Regi
 	return c.ecs.RegisterTaskDefinition(input)
 }
 
-// ServiceList return the list of services
+// ServiceList return the list of ECS services
 func (c *Client) ServiceList(input *ecs.ListServicesInput) (*ecs.ListServicesOutput, error) {
 	return c.ecs.ListServices(input)
 }
@@ -54,4 +54,19 @@ func (c *Client) ServiceCreate(input *ecs.CreateServiceInput) (*ecs.CreateServic
 // ServiceUpdate update ECS service
 func (c *Client) ServiceUpdate(input *ecs.UpdateServiceInput) (*ecs.UpdateServiceOutput, error) {
 	return c.ecs.UpdateService(input)
+}
+
+// ClusterList show the list of ECS clusters
+func (c *Client) ClusterList(input *ecs.ListClustersInput) (*ecs.ListClustersOutput, error) {
+	return c.ecs.ListClusters(input)
+}
+
+// ClusterCreate create ECS cluster
+func (c *Client) ClusterCreate(input *ecs.CreateClusterInput) (*ecs.CreateClusterOutput, error) {
+	return c.ecs.CreateCluster(input)
+}
+
+// ClusterDelete delete ECS cluster
+func (c *Client) ClusterDelete(input *ecs.DeleteClusterInput) (*ecs.DeleteClusterOutput, error) {
+	return c.ecs.DeleteCluster(input)
 }

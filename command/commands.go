@@ -16,5 +16,8 @@ func init() {
 		"service": func() (cli.Command, error) {
 			return &ServiceCommand{}, nil
 		},
+		"cluster": func() (cli.Command, error) {
+			return &ClusterCommand{}, nil
+		},
 	}
 }
