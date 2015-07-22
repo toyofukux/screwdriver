@@ -1,7 +1,9 @@
 # screwdriver
 ![](https://raw.githubusercontent.com/takasing/screwdriver/master/data/warsman.jpg)
 
-The tools to manage EC2 Container Service(ECS)
+The tools to manage [EC2 Container Service(ECS)](http://aws.amazon.com/ecs/details/)  
+
+Today, we use [Docker](https://www.docker.com/) containers to develop Web Services, and we get start moving towards an Immutable Infrastructure with ECS and `screwdriver`!!  
 
 ### Caution
 This repository depends on AWS, ECS specification.
@@ -10,10 +12,12 @@ This repository depends on AWS, ECS specification.
 - [ ] task
   - [x] show the list of task definitions
   - [x] register task new definition
+  - [ ] describe task definition
 - [ ] service
   - [x] show the list of services
-  - [ ] create service
-  - [ ] update service
+  - [x] create service
+  - [x] update service
+  - [ ] describe service
 - [ ] Auto Scaling
 - [ ] ELB
 - [ ] Blue-Green Deployment
