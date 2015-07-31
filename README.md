@@ -48,20 +48,21 @@ nginx:
   image: nginx:{{ .NGINX_IMAGE_TAG }}
   cpu: 128
   memory: 64
-  portMappings:
-    - containerPort: 80
-    - hostPort: 80
+  portmappings:
+    - containerport: 80
+      hostPort: 80
   essential: true
 
 api:
   image: golang:{{ .GOLANG_IMAGE_TAG }}
   cpu: 128
   memory: 64
-  portMappings:
-    - containerPort: 3000
-    - hostPort: 3000
+  portmappings:
+    - containerport: 3000
+      hostport: 3000
   essential: true
 ```
+Check [ecs.ContainerDefinition](https://github.com/aws/aws-sdk-go/blob/master/service/ecs/api.go#L1002-L1094), and **Lowercase** fields such as `PortMappings` to `portmappings`
 
 #### Environment variables for yaml
 `screwdriver` picks up environment variables start with `SCREW_` prefix.  
