@@ -1,6 +1,8 @@
 # screwdriver
 ![](https://raw.githubusercontent.com/takasing/screwdriver/master/data/warsman.jpg)
 
+** Deprecated ** This repository is no more mentenanced.
+
 The tools to manage [EC2 Container Service(ECS)](http://aws.amazon.com/ecs/details/)  
 
 Today, we use [Docker](https://www.docker.com/) containers to develop Web Services, and we get start moving towards an Immutable Infrastructure with ECS and `screwdriver`!!  
